@@ -3,8 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Adami & Egal Vocational School</title>
+  <title>School News & Updates - Adami & Egal</title>
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Optional: Add Poppins/Roboto fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Extend your style.css with blog-specific rules (can be moved to CSS later) */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f8f9fa;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .content-area {
+      flex: 3;
+      min-width: 300px;
+    }
+
+    .sidebar {
+      flex: 1;
+      min-width: 250px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      align-self: flex-start;
+    }
+
+    .blog-post-card {
+      display: flex;
+      gap: 20px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .blog-post-card img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .post-title {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+      color: #2c3e50;
+    }
+
+    .post-title a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s;
+    }
+
+    .post-title a:hover {
+      color: #42b983;
+    }
+
+    .post-meta {
+      color: #777;
+      font-size: 0.9rem;
+      margin: 0 0 10px;
+    }
+
+    .post-excerpt {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 10px;
+      color: #42b983;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    .notice-board ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .notice-board li {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px dashed #ddd;
+    }
+
+    .notice-board li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .notice-date {
+      font-size: 0.85rem;
+      color: #42b983;
+      margin: 0 0 5px;
+    }
+
+    .notice-board a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .notice-board a:hover {
+      color: #42b983;
+    }
+
+    .section-title {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #42b983;
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
 
@@ -18,70 +155,117 @@
     </div>
   </nav>
 
-  <!-- Full-Screen Modal Nav -->
+  <!-- Full-Screen Modal Navigation -->
   <div class="modal-nav" id="modalNav">
     <div class="modal-content">
-      <a href="index.html">Home</a>
+      <a href="home.html">About</a>
       <a href="python.html">Python</a>
       <a href="linux.html">Linux</a>
+      <a href="html-css.html">Html & Css</a>
       <a href="javascript.html">JavaScript</a>
     </div>
   </div>
 
-  <!-- Hero Section (Shorter) -->
-  <header class="hero">
-    <h1>Adami & Egal Vocational School</h1>
-    <p>Practical tech training for real-world jobs</p>
+  <!-- Hero Header -->
+  <header class="hero" style="padding: 80px 20px; text-align: center;">
+    <img src="https://picsum.photos/id/1015/80/80" alt="School Logo" style="border-radius: 50%; margin-bottom: 15px;">
+    <h1>Adami & Egal Coding School</h1>
+    <p>Coding & Tech Training for the Community</p>
   </header>
 
-  <!-- HTML-Only Cards (No CSS Styling) -->
-  <section class="cards-html">
-    <h2>HTML Only (No CSS)</h2>
-    <div>
-      <img src="https://placehold.co/200x150/3498db/ffffff?text=Adami+School" alt="Adami School" width="200" height="150">
-      <h3>Adami Vocational School</h3>
-      <p>Focuses on modern programming and software development.</p>
-    </div>
-    <div>
-      <img src="https://placehold.co/200x150/e74c3c/ffffff?text=Egal+Institute" alt="Egal School" width="200" height="150">
-      <h3>Egal Technical Institute</h3>
-      <p>Specializes in system administration and networking.</p>
-    </div>
-    <div>
-      <img src="https://placehold.co/200x150/2ecc71/ffffff?text=Our+Mission" alt="Overview" width="200" height="150">
-      <h3>School Overview</h3>
-      <p>Together, we offer full-stack vocational training.</p>
-    </div>
-  </section>
+  <!-- Main Content: Blog + Sidebar -->
+  <main class="container">
+    <!-- Blog Posts -->
+    <div class="content-area">
+      <h2 class="section-title">Latest School News</h2>
 
-  <!-- Corrected: Heading Outside Flex Container -->
-  <section class="cards-css-wrapper">
-    <h2 class="cards-heading">Styled with CSS</h2>
-    <div class="cards-css">
-      <div class="card">
-        <img src="https://placehold.co/300x200/3498db/ffffff?text=Adami+School" alt="Adami School">
-        <div class="card-body">
-          <h3>Adami Vocational School</h3>
-          <p>Focuses on modern programming and software development.</p>
+      <!-- News Article 1 -->
+      <article class="blog-post-card">
+        <img src="img/5ebe06-20150318-protest2.jpg" 
+             alt="Students at Science Fair" 
+             class="post-thumbnail">
+        <div class="post-content">
+          <h3 class="post-title"><a href="#">Annual Tech Innovation Fair a Great Success!</a></h3>
+          <p class="post-meta">Published by <strong>Ms. Amina</strong> on September 5, 2025</p>
+          <p class="post-excerpt">
+            Our students showcased amazing projects — from AI chatbots to smart home devices. 
+            Judges were impressed by the creativity and technical skill on display.
+          </p>
+          <a href="#" class="read-more">Read More &raquo;</a>
         </div>
-      </div>
-      <div class="card">
-        <img src="https://placehold.co/300x200/e74c3c/ffffff?text=Egal+Institute" alt="Egal School">
-        <div class="card-body">
-          <h3>Egal Technical Institute</h3>
-          <p>Specializes in system administration and networking.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://placehold.co/300x200/2ecc71/ffffff?text=Our+Mission" alt="Overview">
-        <div class="card-body">
-          <h3>School Overview</h3>
-          <p>Together, we offer full-stack vocational training.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </article>
 
+      <!-- News Article 2 -->
+      <article class="blog-post-card">
+        <img src="img/thumbs_b_c_702f6f171c47f891fa9ab8bb7e7088af.jpg" 
+             alt="Sports Day at School" 
+             class="post-thumbnail">
+        <div class="post-content">
+          <h3 class="post-title"><a href="#">Career Day 2025: Students Meet Tech Professionals</a></h3>
+          <p class="post-meta">Published by <strong>Mr. Joseph</strong> on August 28, 2025</p>
+          <p class="post-excerpt">
+            Local developers, sysadmins, and data scientists visited to share their journeys. 
+            Students got real-world advice and inspiration for their futures.
+          </p>
+          <a href="#" class="read-more">Read More &raquo;</a>
+        </div>
+      </article>
+
+      <!-- News Article 3 -->
+      <article class="blog-post-card">
+        <img src="img/images (1).jpeg" 
+             alt="Coding Class in Session" 
+             class="post-thumbnail">
+        <div class="post-content">
+          <h3 class="post-title"><a href="#">New Linux Lab Opens This Month</a></h3>
+          <p class="post-meta">Published by <strong>Admin Team</strong> on August 20, 2025</p>
+          <p class="post-excerpt">
+            Thanks to community support, we’ve launched a dedicated Linux & Networking lab. 
+            Students now get hands-on experience with servers, CLI, and cloud tools.
+          </p>
+          <a href="#" class="read-more">Read More &raquo;</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="section-title">Important Notices</h2>
+      <ul class="notice-board">
+        <li>
+          <p class="notice-date">Sep 10, 2025</p>
+          <a href="#">Enrollment Open for Fall Term</a>
+        </li>
+        <li>
+          <p class="notice-date">Sep 5, 2025</p>
+          <a href="#">Python Bootcamp Starts Next Week</a>
+        </li>
+        <li>
+          <p class="notice-date">Aug 29, 2025</p>
+          <a href="#">Parent-Teacher Conference Schedule</a>
+        </li>
+        <li>
+          <p class="notice-date">Aug 25, 2025</p>
+          <a href="#">Join the After-School Robotics Club!</a>
+        </li>
+        <li>
+          <p class="notice-date">Aug 20, 2025</p>
+          <a href="#">School Closed on Labor Day (Sep 1)</a>
+        </li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="text-align: center; padding: 30px 20px; background: #2c3e50; color: white; margin-top: 50px;">
+    <p>&copy; 2025 Adami & Egal Vocational School. Empowering Future Technicians.</p>
+  </footer>
+
+  <!-- Reuse your existing script -->
   <script src="js/script.js"></script>
+  <!-- TinyMCE CDN -->
+<script src="tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+
 </body>
 </html>
+

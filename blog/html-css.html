@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML & CSS Guide – Adami & Egal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">Adami & Egal</div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Modal Nav -->
+  <div class="modal-nav" id="modalNav">
+    <div class="modal-content">
+      <a href="index.html">Blog</a>
+      <a href="home.html">About</a>
+      <a href="python.html">Python</a>
+      <a href="linux.html">Linux</a>
+      <a href="javascript.html">JavaScript</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>HTML & CSS: The Foundation of the Web</h1>
+    <p>Structure with HTML, Style with CSS</p>
+  </header>
+
+  <!-- Logos Section -->
+  <div style="text-align: center; padding: 40px 20px; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; background: #f9f9f9;">
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" 
+           alt="HTML5 Logo" 
+           style="width: 120px; height: auto;">
+      <h3>HTML</h3>
+      <p><strong>HyperText Markup Language</strong><br>
+         Defines the structure of a webpage: headings, paragraphs, images, links.</p>
+    </div>
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" 
+           alt="CSS3 Logo" 
+           style="width: 120px; height: auto;">
+      <h3>CSS</h3>
+      <p><strong>Cascading Style Sheets</strong><br>
+         Adds style: colors, fonts, layout, animations — makes pages beautiful.</p>
+    </div>
+  </div>
+
+  <!-- Comparison Section -->
+  <section style="padding: 60px 5%; max-width: 1000px; margin: 0 auto; line-height: 1.8;">
+
+    <h2>HTML vs CSS: A Simple Example</h2>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; margin: 40px 0;">
+
+      <!-- HTML Example -->
+      <div style="flex: 1; min-width: 300px; background: #f0f0f0; padding: 20px; border-radius: 10px;">
+        <h3>📄 HTML (Structure)</h3>
+        <pre style="background: #333; color: #fff; padding: 15px; border-radius: 5px; overflow-x: auto;">
+<div class="card">
+  <h3>My First Website</h3>
+  <p>This is a paragraph.</p>
+  <button>Click Me</button>
+</div></pre>
+        <p><em>Like the skeleton of a body.</em></p>
+      </div>
+
+      <!-- CSS Example -->
+      <div style="flex: 1; min-width: 300px; background: #e6f7ff; padding: 20px; border-radius: 10px;">
+        <h3>🎨 CSS (Style)</h3>
+        <pre style="background: #003366; color: #a0f0ff; padding: 15px; border-radius: 5px; overflow-x: auto;">
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+button {
+  background: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+</pre>
+        <p><em>Like the skin, clothes, and makeup.</em></p>
+      </div>
+
+    </div>
+
+    <p style="text-align: center; margin-top: 40px; font-size: 1.2em; color: #2c3e50;">
+      <strong>Together, HTML and CSS create every website you see.</strong><br>
+      Start here — it’s the first step to becoming a web developer.
+    </p>
+
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

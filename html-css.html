@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML vs CSS – Adami & Egal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Local styles for this page (can be moved to style.css later) */
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .cards-comparison {
+      display: flex;
+      gap: 40px;
+      padding: 40px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card-plain {
+      flex: 1;
+      min-width: 300px;
+      background: #f8f9fa;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .card-styled {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card-styled:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-styled img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-styled .card-body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-styled h3 {
+      margin: 0 0 10px;
+      color: #2c3e50;
+      font-size: 1.4rem;
+    }
+
+    .card-styled p {
+      color: #555;
+      margin: 0;
+    }
+
+    .explanation {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+      line-height: 1.8;
+    }
+
+    .explanation h2 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .explanation h3 {
+      color: #42b983;
+      margin: 25px 0 10px;
+    }
+
+    .definition {
+      background: #f0f8ff;
+      padding: 15px;
+      border-left: 4px solid #42b983;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">Adami & Egal</div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Modal Nav -->
+  <div class="modal-nav" id="modalNav">
+    <div class="modal-content">
+      <a href="index.html">News</a>
+      <a href="home.html">About</a>
+      <a href="python.html">Python</a>
+      <a href="linux.html">Linux</a>
+      <a href="javascript.html">JavaScript</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>HTML vs CSS: What’s the Difference?</h1>
+    <p>See how CSS transforms plain HTML into beautiful designs</p>
+  </header>
+
+  <!-- Two Cards: Plain vs Styled -->
+  <section class="cards-comparison">
+    
+    <!-- Card 1: No CSS (Plain HTML) -->
+    <div class="card-plain">
+      <h3>Adami Coding School</h3>
+      <img src="https://placehold.co/300x180/3498db/ffffff?text=Adami+School" alt="Adami School" width="300" height="180">
+      <p>Teaching modern programming since 2020. We help students build real apps with Python, JavaScript, and more.</p>
+    </div>
+
+    <!-- Card 2: With CSS Styling -->
+    <div class="card-styled">
+      <img src="https://placehold.co/300x180/3498db/ffffff?text=Adami+School" alt="Adami School">
+      <div class="card-body">
+        <h3>Adami Coding School</h3>
+        <p>Teaching modern programming since 2020. We help students build real apps with Python, JavaScript, and more.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Explanation Section -->
+  <section class="explanation">
+    <h2>Why Do These Cards Look So Different?</h2>
+
+    <p>Both cards contain the <strong>exact same content</strong>: a heading, an image, and a paragraph. But one looks plain, and the other looks professional. Here's why:</p>
+
+    <h3>🔹 HTML: The Structure (The Skeleton)</h3>
+    <div class="definition">
+      <strong>HTML</strong> stands for <em>HyperText Markup Language</em>. It defines the <strong>structure</strong> of a webpage — what is a heading, what is a paragraph, where the image goes, and what links exist.
+    </div>
+    <p>The left card uses only HTML. It works — the content is there — but it has no colors, spacing, or visual appeal. That’s HTML on its own: functional, but basic.</p>
+
+    <h3>🎨 CSS: The Style (The Skin & Clothes)</h3>
+    <div class="definition">
+      <strong>CSS</strong> stands for <em>Cascading Style Sheets</em>. It adds <strong>style</strong>: colors, fonts, spacing, shadows, animations, and layout. It turns a plain page into a beautiful, user-friendly experience.
+    </div>
+    <p>The right card uses CSS to add padding, rounded corners, a subtle shadow, hover effects, and consistent spacing. This makes it more engaging and professional — even though the content is identical.</p>
+
+    <h3>🧠 Analogy: A House</h3>
+    <p>Think of HTML as the <strong>bricks and walls</strong> of a house — it gives structure. CSS is the <strong>paint, furniture, and lighting</strong> — it makes it livable and beautiful.</p>
+
+    <h3>🚀 Why This Matters</h3>
+    <p>Every website you visit uses both HTML and CSS. Learning them together is the first step to becoming a web developer. You can’t have a great website without both.</p>
+
+    <p><strong>HTML tells the browser what to show.</strong><br>
+       <strong>CSS tells the browser how to show it.</strong></p>
+
+    <p>Now that you see the difference — imagine what’s possible when we add <strong>JavaScript</strong> to make it interactive!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="text-align: center; padding: 30px 20px; background: #2c3e50; color: white; margin-top: 50px;">
+    <p>&copy; 2025 Adami & Egal Vocational School. Teaching the web, one tag at a time.</p>
+  </footer>
+
+  <!-- Reuse your script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
