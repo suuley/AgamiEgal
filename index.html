@@ -396,6 +396,41 @@
   <!-- Reuse your existing script -->
   <script src="js/script.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Select all "Read More" links with class .read-more
+      const readMoreButtons = document.querySelectorAll('.read-more');
+    
+      readMoreButtons.forEach(button => {
+        button.addEventListener('click', function (e) {
+          e.preventDefault(); // Prevent jumping
+    
+          // Find the parent article
+          const article = button.closest('.blog-post-card');
+    
+          // Find the parts to toggle
+          const excerpt = article.querySelector('.post-excerpt');
+          const fullContent = article.querySelector('.full-content');
+    
+          // Get current display state
+          const isFullVisible = fullContent.style.display === 'block';
+    
+          // Toggle visibility
+          if (isFullVisible) {
+            // Hide full content, show excerpt
+            fullContent.style.display = 'none';
+            excerpt.style.display = 'block';
+            button.textContent = 'Read More »';
+          } else {
+            // Show full content, hide excerpt
+            fullContent.style.display = 'block';
+            excerpt.style.display = 'none';
+            button.textContent = 'Read Less «';
+          }
+        });
+      });
+    });
+    </script>
+  <script>
     function toggleNotice(header) {
       // Close all other notices (optional: one open at a time)
       document.querySelectorAll('.notice-header').forEach(h => {
