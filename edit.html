@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit School News</title>
+  <!-- Only load fonts if needed -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div style="max-width: 100%; margin: 30px 20px;">
+    <h3>Edit School News</h3>
+    <textarea id="mytextarea">
+      <p>Start writing your article here...</p>
+    </textarea>
+  </div>
+
+  <footer style="text-align: center; padding: 30px 20px; background: #333; color: white; margin-top: 50px;">
+    <p>&copy; 2025 Adami & Egal Vocational School</p>
+  </footer>
+
+  <!-- TinyMCE -->
+  <script src="tinymce_8.0.2/tinymce/js/tinymce/tinymce.min.js"></script>
+  <script>
+    tinymce.init({
+      selector: '#mytextarea',
+      height: 600,
+      width: '100%',
+      plugins: [
+        'code', 'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'print', 'preview',
+        'searchreplace', 'visualblocks', 'fullscreen', 'insertdatetime', 'media', 'table', 'paste', 'help', 'wordcount'
+      ],
+      toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
+        'bullist numlist outdent indent | link image | code | blogtemplate | help',
+      menubar: true,
+      branding: false,
+      license_key: 'gpl',
+
+      // ✅ Editor-focused styles only
+      content_style: `
+        body {
+          font-family: 'Poppins', sans-serif;
+          font-size: 16px;
+          line-height: 1.6;
+          max-width: 1000px;
+          margin: 20px auto;
+          padding: 20px;
+          background: white;
+          color: #333;
+        }
+        .full-content {
+          display: block !important;
+          padding: 25px;
+          margin: 20px 0;
+          border: 2px dashed #007cba;
+          background-color: #f0f8ff;
+          color: #444;
+          font-style: italic;
+        }
+        .full-content::before {
+          content: "📘 Full Article Content (Hidden on Live Site)";
+          display: block;
+          font-weight: bold;
+          color: #007cba;
+          margin-bottom: 10px;
+        }
+        .post-thumbnail {
+          max-width: 300px;
+          height: auto;
+          border-radius: 8px;
+          border: 1px solid #ddd;
+          opacity: 0.8;
+        }
+        .post-excerpt {
+          -webkit-line-clamp: unset !important;
+          -webkit-box-orient: unset !important;
+          overflow: visible !important;
+          white-space: normal !important;
+          display: block;
+        }
+        .read-more {
+          color: #42b983;
+          font-weight: 600;
+          text-decoration: none;
+        }
+        .read-more:hover {
+          text-decoration: underline;
+        }
+      `,
+
+      setup: function (editor) {
+        editor.ui.registry.addButton('blogtemplate', {
+          text: 'Add Blog Post',
+          tooltip: 'Insert a new blog post template',
+          onAction: function () {
+            const today = new Date().toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            });
+
+            const template = `
+<article class="blog-post-card">
+  <img src="img/default.jpg" alt="Blog Post Image" class="post-thumbnail">
+  <div class="post-content">
+    <h3 class="post-title"><a href="#">[Enter Title Here]</a></h3>
+    <p class="post-meta">Published by <strong>[Author Name]</strong> on ${today}</p>
+    <p class="post-excerpt">[Write a short excerpt here...]</p>
+
+    <!-- ✅ YES — THIS IS HERE! -->
+    <div class="full-content" style="display: none;">
+      <p>[Write the full article content here. This will be hidden until "Read More" is clicked.]</p>
+    </div>
+
+    <a href="#" class="read-more">Read More &raquo;</a>
+  </div>
+</article>`;
+
+            editor.insertContent(template);
+
+            setTimeout(() => {
+              const links = editor.dom.select('a');
+              const titleLink = Array.from(links).find(link =>
+                link.textContent === '[Enter Title Here]'
+              );
+              if (titleLink) {
+                editor.selection.select(titleLink);
+                editor.selection.collapse(false);
+              }
+            }, 100);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>School News & Updates - Adami & Egal</title>
   <link rel="stylesheet" href="css/style.css" />
   <!-- Optional: Add Poppins/Roboto fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
   <style>
     /* Extend your style.css with blog-specific rules (can be moved to CSS later) */
     body {
@@ -34,7 +36,7 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       align-self: flex-start;
     }
 
@@ -44,7 +46,7 @@
       background: white;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       margin-bottom: 30px;
       flex-wrap: wrap;
     }
@@ -84,6 +86,11 @@
     }
 
     .post-excerpt {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin: 0 0 10px;
       color: #555;
       line-height: 1.6;
     }
@@ -141,8 +148,79 @@
       padding-bottom: 8px;
       display: inline-block;
     }
+    /* === Important Notices - Expandable Accordion === */
+
+.notice-board {
+  list-style: none;
+  padding: 0;
+}
+
+.notice-item {
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-left: 4px solid #42b983;
+  transition: background 0.2s ease;
+}
+
+.notice-header:hover {
+  background: #e9ecef;
+}
+
+.notice-header a {
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  flex: 1;
+}
+
+.notice-header a:hover {
+  color: #42b983;
+}
+
+.expand-icon {
+  font-size: 0.9em;
+  color: #42b983;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.notice-header.active .expand-icon {
+  transform: rotate(90deg);
+}
+
+.notice-body {
+  padding: 0 16px 12px;
+  display: none;
+  color: #555;
+  line-height: 1.6;
+  border-left: 1px solid #ddd;
+  margin-left: 18px;
+  background: white;
+}
+
+.notice-body p {
+  margin: 10px 0;
+}
+
+.notice-body small {
+  color: #777;
+  font-size: 0.9em;
+  font-style: italic;
+}
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -164,7 +242,6 @@
       <a href="javascript.html">JavaScript</a>
     </div>
   </div>
-
   <!-- Hero Header -->
   <header class="hero" style="padding: 80px 20px; text-align: center;">
     <img src="https://picsum.photos/id/1015/80/80" alt="School Logo" style="border-radius: 50%; margin-bottom: 15px;">
@@ -177,94 +254,170 @@
     <!-- Blog Posts -->
     <div class="content-area">
       <h2 class="section-title">Latest School News</h2>
-
       <!-- News Article 1 -->
       <article class="blog-post-card">
-        <img src="img/5ebe06-20150318-protest2.jpg" 
-             alt="Students at Science Fair" 
-             class="post-thumbnail">
+        <img src="img/5ebe06-20150318-protest2.jpg" alt="Students at Science Fair" class="post-thumbnail">
         <div class="post-content">
           <h3 class="post-title"><a href="#">Annual Tech Innovation Fair a Great Success!</a></h3>
           <p class="post-meta">Published by <strong>Ms. Amina</strong> on September 5, 2025</p>
           <p class="post-excerpt">
-            Our students showcased amazing projects — from AI chatbots to smart home devices. 
+            Our students showcased amazing projects — from AI chatbots to smart home devices.
             Judges were impressed by the creativity and technical skill on display.
           </p>
+          <div class="full-content" style="display: none;">
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+              Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+              Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a
+              Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
+              undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+              (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of
+              ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+              amet..", comes from a line in section 1.10.32.</p>
+          </div>
           <a href="#" class="read-more">Read More &raquo;</a>
         </div>
       </article>
 
       <!-- News Article 2 -->
       <article class="blog-post-card">
-        <img src="img/thumbs_b_c_702f6f171c47f891fa9ab8bb7e7088af.jpg" 
-             alt="Sports Day at School" 
-             class="post-thumbnail">
+        <img src="img/thumbs_b_c_702f6f171c47f891fa9ab8bb7e7088af.jpg" alt="Sports Day at School"
+          class="post-thumbnail">
         <div class="post-content">
           <h3 class="post-title"><a href="#">Career Day 2025: Students Meet Tech Professionals</a></h3>
           <p class="post-meta">Published by <strong>Mr. Joseph</strong> on August 28, 2025</p>
           <p class="post-excerpt">
-            Local developers, sysadmins, and data scientists visited to share their journeys. 
+            Local developers, sysadmins, and data scientists visited to share their journeys.
             Students got real-world advice and inspiration for their futures.
           </p>
+          <div class="full-content" style="display: none;">
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+              Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+              Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a
+              Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
+              undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+              (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of
+              ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+              amet..", comes from a line in section 1.10.32.</p>
+          </div>
           <a href="#" class="read-more">Read More &raquo;</a>
         </div>
       </article>
 
       <!-- News Article 3 -->
       <article class="blog-post-card">
-        <img src="img/images (1).jpeg" 
-             alt="Coding Class in Session" 
-             class="post-thumbnail">
+        <img src="img/images (1).jpeg" alt="Coding Class in Session" class="post-thumbnail">
         <div class="post-content">
           <h3 class="post-title"><a href="#">New Linux Lab Opens This Month</a></h3>
           <p class="post-meta">Published by <strong>Admin Team</strong> on August 20, 2025</p>
           <p class="post-excerpt">
-            Thanks to community support, we’ve launched a dedicated Linux & Networking lab. 
+            Thanks to community support, we’ve launched a dedicated Linux & Networking lab.
             Students now get hands-on experience with servers, CLI, and cloud tools.
           </p>
+          <div class="full-content" style="display: none;">
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
+              Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+              Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a
+              Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
+              undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+              (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of
+              ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+              amet..", comes from a line in section 1.10.32.</p>
+          </div>
           <a href="#" class="read-more">Read More &raquo;</a>
         </div>
       </article>
     </div>
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2 class="section-title">Important Notices</h2>
-      <ul class="notice-board">
-        <li>
-          <p class="notice-date">Sep 10, 2025</p>
-          <a href="#">Enrollment Open for Fall Term</a>
-        </li>
-        <li>
-          <p class="notice-date">Sep 5, 2025</p>
-          <a href="#">Python Bootcamp Starts Next Week</a>
-        </li>
-        <li>
-          <p class="notice-date">Aug 29, 2025</p>
-          <a href="#">Parent-Teacher Conference Schedule</a>
-        </li>
-        <li>
-          <p class="notice-date">Aug 25, 2025</p>
-          <a href="#">Join the After-School Robotics Club!</a>
-        </li>
-        <li>
-          <p class="notice-date">Aug 20, 2025</p>
-          <a href="#">School Closed on Labor Day (Sep 1)</a>
-        </li>
-      </ul>
-    </aside>
-  </main>
+  <!-- Sidebar -->
+<aside class="sidebar">
+  <h2 class="section-title">Important Notices</h2>
 
+  <div class="notice-board">
+
+    <div class="notice-item">
+      <div class="notice-header" onclick="toggleNotice(this)">
+        <a href="javascript:void(0)">Enrollment Open for Fall Term</a>
+        <span class="expand-icon">▶</span>
+      </div>
+      <div class="notice-body">
+        <p>The enrollment period for the Fall 2025 term is now open. Students can register online or at the admin office. Deadline: October 15, 2025.</p>
+      </div>
+    </div>
+
+    <div class="notice-item">
+      <div class="notice-header" onclick="toggleNotice(this)">
+        <a href="javascript:void(0)">Python Bootcamp Starts Next Week</a>
+        <span class="expand-icon">▶</span>
+      </div>
+      <div class="notice-body">
+        <p>The 4-week Python programming bootcamp begins Monday, September 9. All skill levels welcome. Bring your laptop and enthusiasm!</p>
+      </div>
+    </div>
+
+    <div class="notice-item">
+      <div class="notice-header" onclick="toggleNotice(this)">
+        <a href="javascript:void(0)">Parent-Teacher Conference Schedule</a>
+        <span class="expand-icon">▶</span>
+      </div>
+      <div class="notice-body">
+        <p>Conferences will be held September 16–18. Sign-up sheets are posted outside the main office. Virtual options available upon request.</p>
+      </div>
+    </div>
+
+    <div class="notice-item">
+      <div class="notice-header" onclick="toggleNotice(this)">
+        <a href="javascript:void(0)">Join the After-School Robotics Club!</a>
+        <span class="expand-icon">▶</span>
+      </div>
+      <div class="notice-body">
+        <p>Students in grades 9–12 are invited to join the Robotics Club. Meets every Thursday 3:30–5:00 PM in Lab 3. No experience needed.</p>
+      </div>
+    </div>
+
+    <div class="notice-item">
+      <div class="notice-header" onclick="toggleNotice(this)">
+        <a href="javascript:void(0)">School Closed on Labor Day (Sep 1)</a>
+        <span class="expand-icon">▶</span>
+      </div>
+      <div class="notice-body">
+        <p>Adami & Egal School will be closed on Monday, September 1 in observance of Labor Day. Regular classes resume on Tuesday, September 2.</p>
+      </div>
+    </div>
+
+  </div>
+</aside>
+  </main>
   <!-- Footer -->
-  <footer class="site-footer" style="text-align: center; padding: 30px 20px; background: #2c3e50; color: white; margin-top: 50px;">
-    <p>&copy; 2025 Adami & Egal Vocational School. Empowering Future Technicians.</p>
+  <footer class="site-footer"
+    style="text-align: center; padding: 30px 20px; background: #2c3e50; color: white; margin-top: 50px;">
+    <p>&copy; 2025 Adami & Egal Coding School. Empowering Future Programmers.</p>
   </footer>
 
   <!-- Reuse your existing script -->
   <script src="js/script.js"></script>
-  <!-- TinyMCE CDN -->
-<script src="tinymce/tinymce.min.js" referrerpolicy="origin"></script>
-
+  <script>
+    function toggleNotice(header) {
+      // Close all other notices (optional: one open at a time)
+      document.querySelectorAll('.notice-header').forEach(h => {
+        if (h !== header) {
+          h.classList.remove('active');
+          h.nextElementSibling.style.display = 'none';
+        }
+      });
+    
+      // Toggle clicked notice
+      const body = header.nextElementSibling;
+      const isActive = header.classList.contains('active');
+    
+      if (isActive) {
+        header.classList.remove('active');
+        body.style.display = 'none';
+      } else {
+        header.classList.add('active');
+        body.style.display = 'block';
+      }
+    }
+    </script>
 </body>
-</html>
 
+</html>
